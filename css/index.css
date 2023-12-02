@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Hind', sans-serif;
+    color: #212529;
+    line-height: 1.5;
+    background-color: #fff;
+    font-size: 18px;
+
+}
+
+/* !HEADER */
+header {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+
+}
+
+header .navbar-brand {
+    font-size: 2rem;
+}
+
+
+
+
+/* ! NAV */
+#portfolionav .nav-link {
+    font-size: 1rem;
+    padding: 0 1rem;
+
+}
+
+
+
+#portfolionav .nav-item .nav-link {
+    color: white;
+    transition: 1s;
+}
+
+#portfolionav .active .nav-link {
+    color: #35a22c;
+}
+
+#portfolionav .nav-item:hover .nav-link {
+    color: #35a22c;
+}
+
+
+
+#portfolionav .nav-link::after {
+    content: "";
+    display: block;
+    /* ? trước hover */
+    width: 0%;
+    height: 2px;
+    background-color: #35a22c;
+    transition: all 0.5s;
+
+}
+
+/* ? sau hover */
+#portfolionav .nav-item:hover .nav-link::after {
+    width: 100%;
+
+}
+
+/* ? thẻ li có class active thì after của nav-link luôn xuất hiện đường gạch */
+#portfolionav .active .nav-link::after {
+    width: 100%;
+}
+
+
+
+
+
+
+/* ! CAROUSEL */
+
+#carouselMain .carousel-item>img {
+    height: 100vh;
+    object-fit: cover;
+}
+
+#carouselMain .carousel-caption img {
+    width: 140px;
+    border-radius: 50%;
+}
+
+/* ? kỹ thuật căn giữa với position absilute cho mọi màn hình */
+#carouselMain .carousel-caption {
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+/* ! PROJECT */
+.project {
+    padding: 100px 0;
+
+}
+
+
+/* ! AWARDS */
+.awards {
+    padding: 70px 0;
+    background-image: url(../img/memphis_3.png);
+    background-size: 50%;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+}
+
+.awards__left {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.awards__right {
+    padding: 30px;
+}
+
+
+/* ? desktop fisrt : max-wwidth ( màn hình lớn đến nhỏ ) , mobile fisrt :min-width thì ngược lại */
+
+@media screen and (max-width:992px) {
+
+    header .navbar-toggler {
+        background-color: #35a22c;
+    }
+
+    #portfolionav {
+        background-color: #fff;
+    }
+
+    #portfolionav .nav-item .nav-link {
+        color: #35a22c;
+    }
+
+    #portfolionav .nav-item:hover {
+        background-color: #35a22c;
+    }
+    #portfolionav .nav-item:hover .nav-link{
+        color: #fff;
+    }
+    #portfolionav .nav-link::after {
+        opacity: 0;
+        /* display:none dùng khi muốn ẩn thành phần của thẻ nhưng k sử dụng đc hiệu ứng */
+    }
+   
+}
